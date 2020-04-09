@@ -1,304 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <script src="https://kit.fontawesome.com/edb225efbd.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- displays site properly based on user's device -->
+        <script src="https://kit.fontawesome.com/edb225efbd.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-      font-size: 400;
-      background-image: url("images/bg-curve-desktop.svg");
-      font-family: 'Open sans', sans-serif;
-      color: (240, 75%, 98%);
-    }
-    *{
-      line-height: 1.5;
-      outline: none;
-    }
-    .header-layout {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      max-width: 20%;
-      height: 100%;
-      width: 100%;
-    }
-    a{
-      text-decoration: none;
-      color: inherit;
-    }
-    a:hover {
-      color: hsl(224, 93%, 58%);
-    }
-    ul li {
-      list-style: none;
-      text-decoration: none;
-    }
-    input {
-      border:  1px solid hsl(0%, 0%, 75%);
-      padding: 3px 10px;
-      width: 250px;
-      z-index: 1;
-    }
-    #submit {
-      background-color: hsl(224, 93%, 58%);
-      color: hsl(0, 6%, 94%);
-      font-weight: 600;
-      border: none;
-      padding: 6px 20px;
-      border-radius: 3px;
-    }
-    .footer-button {
-      margin-top: 10px;
-    }
-    #submit:hover {
-      background-color: hsl(243, 87%, 12%);
-      cursor: pointer;
-    }
-    #submit:active {
-      background-color: hsl(243, 87%, 10%);
-    }
-    img.illustration {
-      max-width: 50%;
-      width: 100%;
-      height: auto;
-    }
-    /* header {
+        <title>Frontend Mentor | Fylo landing page with two column layout</title>
+
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                font-size: 400;
+                background-image: url("images/bg-curve-desktop.svg");
+                font-family: 'Open sans', sans-serif;
+                color: (240, 75%, 98%);
+            }
+            * {
+                line-height: 1.5;
+                outline: none;
+            }
+            #error {
+              color: red;
+            }
+            h1,h2,h3,h4,h5,h6 {
+              font-family: 'Raleway', sans-serif;
+              font-weight: 700;
+            }
+            .header-layout {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .logo {
+                max-width: 20%;
+                height: 100%;
+                width: 100%;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 400;
+            }
+            a:hover {
+                color: hsl(224, 93%, 58%);
+            }
+            ul li {
+                list-style: none;
+                text-decoration: none;
+            }
+            input {
+                border: 1px solid hsl(0%, 0%, 75%);
+                padding: 3px 10px;
+                width: 250px;
+                z-index: 1;
+            }
+            #submit {
+                background-color: hsl(224, 93%, 58%);
+                color: hsl(0, 6%, 94%);
+                font-weight: 600;
+                border: none;
+                padding: 6px 20px;
+                border-radius: 3px;
+            }
+            .footer-button {
+                margin-top: 10px;
+            }
+            #submit:hover {
+                background-color: hsl(243, 87%, 12%);
+                cursor: pointer;
+            }
+            #submit:active {
+                background-color: hsl(243, 87%, 10%);
+            }
+            img.illustration {
+                max-width: 50%;
+                width: 100%;
+                height: auto;
+            }
+            /* header {
       justify-content: space-between;
     } */
-    header ul {
-      display: flex;
-    }
-    header ul li {
-      padding-left: 10px;
+            header ul {
+                display: flex;
+            }
+            header ul li {
+                padding-left: 10px;
 
-    }
-    .container, header {
-      width: 80%;
-      margin: 20px auto;
-    }
-    .flex-layout {
-      display: flex;
-      align-items: center;
-    }
-    section.card {
-      margin: 100px 0;
-    }
-    .text-area {
-      padding-right: 30px;
-    }
-    .work-link a {
-      color: hsl(170, 45%, 43%);
-    }
+            }
+            .container,
+            header {
+                width: 80%;
+                margin: 20px auto;
+            }
+            .flex-layout {
+                display: flex;
+                align-items: center;
+            }
+            section.card {
+                margin: 100px 0;
+            }
+            .text-area {
+                padding-right: 30px;
+            }
+            .work-link a {
+                color: hsl(170, 45%, 43%);
+            }
 
-    .testimonial {
-      background-color: white;
-      box-shadow: 1px 1px 3px 3px #e6e4e45b;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .testimonial .flex-layout {
-      margin-top: 30px;
-    }
-    .testimonial-image {
-      max-width: 15%;
-      border-radius: 50%;
-      margin-right: 30px;
-    }
-    /* Padding to center for both footer-header and footer */
-    .padtocenter {
-      padding: 5% 10%;
-    }
-    .footer-header {
-      color: hsl(0, 0%, 75%);
-      background-color: hsl(238, 22%, 44%);
-    }
-    .footer-header h2 {
-      color: #f0eeee;
-    }
-    .footer-header .text-area {
-      margin-right: 15%;
-      padding-right: 10%;
-    }
-    footer .flex-layout {
-      justify-content: space-between;
-    }
-    .social-icons {
-      margin-right: 20px;
-    }
-    footer {
-      background-color: hsl(243, 87%, 12%);
-      color: hsl(0, 0%, 75%);
-      line-height: 1.9;
-    }
-    .color {
-      filter: brightness(100%);
-    }
-    .name {
-      line-height: 0;
-      margin-top: 0;
-      padding: 0;
-    }
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    @media (max-width: 1051px) {
-      .header-input {
-        margin-top: 10px;
-      }
-    }
-    @media (max-width: 800px) {
-      body {
-        background-image: url('images/bg-curve-mobile.svg');
-      }
-       .flex-layout {
-         flex-direction: column-reverse;
-       }
-       .text-area{
-         text-align: center;
-       }
-       footer .flex-layout, .footer-header {
-         flex-direction: column;
-         align-items: flex-start;
-       }
-       footer {
-         padding: 20px;
+            .testimonial {
+                background-color: white;
+                box-shadow: 1px 1px 3px 3px #e6e4e45b;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .testimonial .flex-layout {
+                margin-top: 30px;
+            }
+            .testimonial-image {
+                max-width: 15%;
+                border-radius: 50%;
+                margin-right: 30px;
+            }
+            /* Padding to center for both footer-header and footer */
+            .padtocenter {
+                padding: 5% 10%;
+            }
+            .footer-header {
+                color: hsl(0, 0%, 75%);
+                background-color: hsl(238, 22%, 44%);
+            }
+            .footer-header h2 {
+                color: #f0eeee;
+            }
+            .footer-header .text-area {
+                margin-right: 15%;
+                padding-right: 10%;
+            }
+            footer .flex-layout {
+                justify-content: space-between;
+            }
+            .social-icons {
+                margin-right: 20px;
+            }
+            footer {
+                background-color: hsl(243, 87%, 12%);
+                color: hsl(0, 0%, 75%);
+                line-height: 1.9;
+            }
+            .color {
+                filter: brightness(100%);
+            }
+            .name {
+                line-height: 0;
+                margin-top: 0;
+                padding: 0;
+            }
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+            @media(max-width: 1051px) {
+                .header-input {
+                    margin-top: 10px;
+                }
+            }
+            @media(max-width: 800px) {
+                body {
+                    background-image: url('images/bg-curve-mobile.svg');
+                }
+                .flex-layout {
+                    flex-direction: column-reverse;
+                }
+                .text-area {
+                    text-align: center;
+                }
+                footer .flex-layout,
+                .footer-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                footer {
+                    padding: 20px;
 
-       }
-       .footer-header .text-area, .footer-header {
-        margin-right: 0;
-        padding-right: 0;
-        padding: 0 20px;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .middle-section {
-      text-align: left;
-      padding-right: 0;
-    }
-    blockquote {
-      margin: 0;
-    }
-    .testimonial .flex-layout {
-      flex-direction: row;
-    }
-    .footer-nav ul {
-      padding: 0;
-    }
-    .social-container {
-      align-self: center;
-    }
-  }
-  </style>
-</head>
-<body>
-  <header class="header-layout">
-    <img src="images/logo.svg" alt="" class="logo">
-    <ul>
-      <li> <a href="#">Features</a> </li>
-      <li><a href="#">Team</a></li>
-      <li><a href="#">Sign In</a></li>
-    </ul>
-  </header>
-    <main class="container">
-      <section class="flex-layout card">
-        <div class="text-area">
-          <h2>
-            All your files in one secure location, accessible anywhere.
-          </h2>
-          <p>
-            Fylo stores your most important files in one secure location. 
-            Access them wherever you need, share and collaborate with friends, 
-            family, and co-workers.
-          </p>
-          <input type="text" name="" >
-          <button type="submit" class="header-input" id="submit">Get Started</button>
-        </div>
-        <img src="images/illustration-1.svg" alt="" class="illustration">
-      </section>
+                }
+                .footer-header {
+                    padding-top: 300px;
+                }
+                .footer-header .text-area,
+                .footer-header {
+                    margin-right: 0;
+                    padding: 0 20px 30px;
+                    text-align: center;
+                }
+                .middle-section {
+                    text-align: left;
+                    padding-right: 0;
+                }
+                blockquote {
+                    margin: 0;
+                }
+                .testimonial .flex-layout {
+                    flex-direction: row;
+                }
+                .footer-nav ul {
+                    padding: 0;
+                }
+                .social-container {
+                    align-self: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header-layout">
+            <img src="images/logo.svg" alt="" class="logo">
+            <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Sign In</a></li>
+            </ul>
+        </header>
+        <main class="container">
+            <section class="flex-layout card">
+                <div class="text-area">
+                    <h2>
+                        All your files in one secure location, accessible anywhere.
+                    </h2>
+                    <p>
+                        Fylo stores your most important files in one secure location. 
+                                    Access them wherever you need, share and collaborate with friends, 
+                                    family, and co-workers.
+                    </p>
+                    <form action="#" method="post" name="myForm" onsubmit="validateForm()">
+                      <input type="email" name="email" id="email">
+                      <button type="submit" class="header-input" id="submit">Get Started</button>
+                    </form>
+                    <i id="error"></i>
+                </div>
+                <img src="images/illustration-1.svg" alt="" class="illustration">
+            </section>
 
-      <section class="flex-layout card">
-        <div class="text-area middle-section">
-          <h2>
-            Stay productive, wherever you are
-          </h2>
-          <p>
-            Never let location be an issue when accessing your files. Fylo has you 
-            covered for all of your file storage needs.
-          
-            Securely share files and folders with friends, family and colleagues for 
-            live collaboration. No email attachments required!
-          </p>
-          <p class="work-link"><a href="#">See how Fylo works <img src="images/icon-arrow.svg" alt=""></a></p>
-          <blockquote class="testimonial">
-           <img src="images/icon-quotes.svg" alt=""> Fylo has improved our team productivity by an order of magnitude. Since 
-            making the switch our team has become a well-oiled collaboration machine.
+            <section class="flex-layout card">
+                <div class="text-area middle-section">
+                    <h2>
+                        Stay productive, wherever you are
+                    </h2>
+                    <p>
+                        Never let location be an issue when accessing your files. Fylo has you 
+                                    covered for all of your file storage needs.
+                                  
+                                    Securely share files and folders with friends, family and colleagues for 
+                                    live collaboration. No email attachments required!
+                    </p>
+                    <p class="work-link">
+                        <a href="#">See how Fylo works
+                            <img src="images/icon-arrow.svg" alt=""></a>
+                    </p>
+                    <blockquote class="testimonial">
+                        <img src="images/icon-quotes.svg" alt="">
+                        Fylo has improved our team productivity by an order of magnitude. Since 
+                                    making the switch our team has become a well-oiled collaboration machine.
 
-            <div class="flex-layout">
-              <img src="images/avatar-testimonial.jpg" alt="" class="testimonial-image">
-               <span > 
-                <p ><strong>Kyle Burton</strong></p> 
-                 <span class="name" >Founder & CEO, Huddle</span>
-               </span>
+                        <div class="flex-layout">
+                            <img src="images/avatar-testimonial.jpg" alt="" class="testimonial-image">
+                            <span>
+                                <p>
+                                    <strong>Kyle Burton</strong>
+                                </p>
+                                <span class="name">Founder & CEO, Huddle</span>
+                            </span>
+                        </div>
+                    </blockquote>
+                </div>
+                <img src="images/illustration-2.svg" alt="" class="illustration">
+            </section>
+        </main>
+
+        <div class="flex-layout padtocenter footer-header">
+            <div class="text-area">
+                <h2>Get early access today</h2>
+                <p>It only takes a minute to sign up and our free starter tier is extremely generous. 
+                              If you have any questions, our support team would be happy to help you.</p>
             </div>
-          </blockquote>
+            <div>
+              <form action="#" method="post" name="myForm2" onsubmit="validateForm2()">
+                <input type="email" name="email" id="email">
+                <button type="submit" id="submit" class="footer-button">Get Started For Free</button>
+                <i id="error"></i>
+                </form>
+            </div>
         </div>
-        <img src="images/illustration-2.svg" alt="" class="illustration">
-      </section>
-    </main>
-    
-    <div class="flex-layout padtocenter footer-header">
-      <div class="text-area">
-        <h2>Get early access today</h2>
-        <p>It only takes a minute to sign up and our free starter tier is extremely generous. 
-          If you have any questions, our support team would be happy to help you.</p>
-      </div>
-      <div>
-        <input type="email" name="" id="">
-        <button type="submit" id="submit" class="footer-button"> Get Started For Free</button>
-      </div>
-    </div>
- 
-    <footer class="padtocenter">
-      <img src="images/logo.svg" class="logo" alt="" />
-      <div class="footer-wrapper flex-layout">
-        <div>
-          <p><img src="images/icon-phone.svg" alt="" class="social-icons">Phone: +1-543-123-4567</p>
-          <p><img src="images/icon-email.svg" alt="" class="social-icons">example@fylo.com</p>
-        </div>
-      <div class="footer-nav flex-layout">
-        <ul>
-          <li>About Us</li>
-          <li>Jobs</li>
-          <li>Blogs</li>
-          <li>Blog</li>
-        </ul>
-        <ul>
-          <li>Contact Us</li>
-          <li>Terms</li>
-          <li>Privacy</li>
-        </ul>
-      </div>
-      <div class="social-container">
-        <i class="fab social-icons fa-facebook  fa-2x"></i>
-        <i class="fab social-icons fa-twitter   fa-2x"></i>
-        <i class="fab social-icons fa-instagram fa-2x "></i>
-      </div>
-    </div>
 
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Abdulsalam</a>.
-    </p>
-  </footer>
-</body>
+        <footer class="padtocenter">
+            <img src="images/logo-white.svg" class="logo" alt=""/>
+            <div class="footer-wrapper flex-layout">
+                <div>
+                    <p><img src="images/icon-phone.svg" alt="" class="social-icons">Phone: +1-543-123-4567</p>
+                    <p><img src="images/icon-email.svg" alt="" class="social-icons">example@fylo.com</p>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="social-container">
+                    <i class="fab social-icons fa-facebook  fa-2x"></i>
+                    <i class="fab social-icons fa-twitter   fa-2x"></i>
+                    <i class="fab social-icons fa-instagram fa-2x "></i>
+                </div>
+            </div>
+
+            <p class="attribution">
+                Challenge by
+                <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+                          Coded by
+                <a href="#">Abdulsalam</a>.
+            </p>
+        </footer>
+
+        <script>
+          function validateForm() {
+            var x = document.myForm.email.value;
+            var atposition = x.indexOf("@");
+            var dotposition = x.lastIndexOf(".");
+            var errorSign = document.querySelector("#email");
+            var errorMessage = document.querySelector("#error")
+
+            if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+              errorSign.style["border"] = "1px solid red";
+              errorMessage.innerHTML = "Enter a valid email";
+              return false
+            } 
+          }
+          function validateForm2() {
+            var x = document.myForm2.email.value;
+            var atposition = x.indexOf("@");
+            var dotposition = x.lastIndexOf(".");
+            var errorSign = document.querySelector("#email");
+            var errorMessage = document.querySelector("#error")
+
+            if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+              errorSign.style["border"] = "1px solid red";
+              errorMessage.innerHTML = "Enter a valid email";
+              return false
+            } 
+          }
+        </script>
+    </body>
 </html>
